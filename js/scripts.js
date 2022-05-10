@@ -17,3 +17,7 @@ let pokemonList= [{
   abilities: ['damp','cloud-nine','Swift-swim']
 }
 ];
+
+for (let i= 0; i< pokemonList.length; i++) {
+  document.write('That\'s a ' + pokemonList.name)
+}
