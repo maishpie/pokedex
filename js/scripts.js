@@ -19,7 +19,7 @@ let pokemonList= [{
 ];
 
 
-pokemonList.forEach(function (pokemon) => {
+pokemonList.forEach(function (pokemon) {
   document.write('<p>That\'s a ' + pokemon.name + ' (height: ' + pokemon.height + ')</p>')
 
 
