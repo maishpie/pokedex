@@ -18,12 +18,9 @@ let pokemonList= [{
 }
 ];
 
-for (let i= 0; i< pokemonList.length; i++) { //iterating through each object in the array
-  if (pokemonList[i].height > 1) { //highlighting special pokemon
-    document.write('<p>That\'s a ' + pokemonList[i].name + ' (height: ' + pokemonList[i].height + ') - Wow! That\'s big!</p>')
 
-  } else {
-    document.write('<p>That\'s a ' + pokemonList[i].name + ' (height: ' + pokemonList[i].height + ')</p>')
-  }
+pokemonList.forEach(function (pokemon) => {
+  document.write('<p>That\'s a ' + pokemon.name + ' (height: ' + pokemon.height + ')</p>')
 
-}
+
+});
