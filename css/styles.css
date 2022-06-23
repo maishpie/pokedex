@@ -5,3 +5,17 @@ body {
   font-size: 20px;
   text-align: center;
 }
+
+.button-class {
+  border: none;
+  display: inline-block;
+  font-family: inherit;
+  background-color: #FFBFB7;
+  padding: 20px 20px;
+  border-radius: 3px;
+  margin: 5px 5px;
+}
+
+ul {
+  list-style-type: none;
+}
