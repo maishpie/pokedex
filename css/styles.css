@@ -1,3 +1,19 @@
+body {
+  font-family: 'Silkscreen', monospace;
+  background-color: #E9F1F7;
+}
+
 .btn {
   margin: 5px 5px;
+}
+
+.modal-title, .modal-header, .modal-footer {
+  color: #333333;
+  background-color: #E9F1F7;
+
+}
+
+.modal-body {
+  color: #E9F1F7;
+  background-color: #333333;
 }
