@@ -18,14 +18,15 @@ let pokemonRepository = (function () { //main IIFE
   function addListItem (pokemon) {
     let pokemonList = document.querySelector(".list-group");
     let listItem = document.createElement("li");
-    listItem.classList.add("group-list-item")
+    listItem.classList.add("group-list-item");
     let button = document.createElement("button");
     button.innerText = pokemon.name;
     button.classList.add("btn");
     button.classList.add("btn-block");
     button.classList.add("btn-outline-dark");
+    button.classList.add("shadow");
     button.setAttribute("data-toggle", "modal");
-    button.setAttribute("data-target", "#exampleModalCenter");
+    button.setAttribute("data-target", "#pokemonDetailsModal");
     listItem.appendChild(button);
     pokemonList.appendChild(listItem);
     button.addEventListener("click", function(event){
@@ -57,6 +58,10 @@ let pokemonRepository = (function () { //main IIFE
     }).then(function (details) {
       item.imageUrl = details.sprites.front_default;
       item.height = details.height;
+      item.id = details.id;
+      item.weight = details.weight;
+      item.types = details.types.map((name) => name.type.name).join(', ') ;
+
     }).catch(function (e) {
       console.error(e);
     });
@@ -79,11 +84,18 @@ let pokemonRepository = (function () { //main IIFE
     let nameElement = $("<h1>" + pokemon.name + "</h1>");
     let imageElement = $('<img class="modal-img" style="width:50%">');
     imageElement.attr("src", pokemon.imageUrl);
-    let heightElement = $("<p>" + "height : " + pokemon.height + "</p>");
+    let idElement = $("<p>" + "ID# " + pokemon.id + "</p>");
+    let heightElement = $("<p>" + "height : " + pokemon.height/10 + " m" + "</p>");
+    let weightElement = $("<p>" + "weight : " + pokemon.weight/10 + " kg" + "</p>");
+    let typesElement = $("<p>" + "type(s) : " + pokemon.types + "</p>");
 
     modalTitle.append(nameElement);
     modalBody.append(imageElement);
+    modalBody.append(idElement);
     modalBody.append(heightElement);
+    modalBody.append(weightElement);
+    modalBody.append(typesElement);
+
   }
 
   return {
